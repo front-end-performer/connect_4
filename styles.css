@@ -1,0 +1,269 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #fefefe;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	font-family: "Luckiest Guy", sans-serif, cursive;
+	color: #2e332b;
+}
+
+.info_board {
+	display: flex;
+	width: 100%;
+	height: 40px;
+	position: relative;
+	padding-bottom: 20px;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.info_board_content {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	width: 20%;
+}
+
+.modal p:only-of-type {
+    font-size: 3em
+}
+
+.disck {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	display: flex;
+	margin: 2px;
+}
+
+h1 {
+	font-size: 3em;
+	line-height: 2;
+	color: #2e332b;
+}
+
+p {
+	font-size: 1.5em;
+	line-height: 2;
+	text-align: center;
+	color: #30a8df;
+}
+
+.blue {
+	background-color: #30a8df;
+}
+
+.red {
+	background-color: #e9501a;
+}
+
+.text_color__blue {
+	color: #30a8df;
+}
+
+.text_color__red {
+	color: #e9501a;
+}
+
+#board {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	transition: transform 1s;
+	/* box-shadow: 0px 3px 25px #8B9999; */
+}
+
+.scaleBoard {
+	transform: scale(15);
+	transition: transform 3s;
+}
+
+.slot {
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	-webkit-box-shadow: 2px 6px 45px -4px rgba(139, 153, 153, 0.42);
+	-moz-box-shadow: 2px 6px 45px -4px rgba(139, 153, 153, 0.42);
+	box-shadow: 2px 6px 45px -4px rgba(139, 153, 153, 0.42);
+}
+
+.circle {
+	width: 160px;
+	height: 160px;
+	border-radius: 80px;
+	position: relative;
+	top: -30px;
+	left: -30px;
+	border: 40px solid #2e332b;
+	box-shadow: inset 2px 3px 3px #aebfb7;
+}
+
+.player1 {
+	background-color: #30a8df;
+}
+
+.player2 {
+	background-color: #e9501a;
+}
+
+.blink1 {
+	-webkit-animation: blink 1s linear infinite;
+	-moz-animation: blink 1s linear infinite;
+	animation: blink1 1s linear infinite;
+}
+
+.blink2 {
+	-webkit-animation: blink 1s linear infinite;
+	-moz-animation: blink 1s linear infinite;
+	animation: blink2 1s linear infinite;
+}
+
+.box_style {
+	width: 60px;
+	height: 60px;
+	background-color: #30a8df;
+	position: absolute;
+	border-radius: 50%;
+}
+
+.out {
+	position: relative;
+	left: -100px;
+	transform: translateX(-100px);
+	transition: transform 2s;
+}
+
+#startWindow {
+	background-color: #f7f7f7;
+	position: fixed;
+	z-index: 9999;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	transition: all 2s;
+}
+
+.startWindow_border {
+	border-top: 4px double #2e332b;
+	border-bottom: 4px double #2e332b;
+	padding: 60px;
+}
+
+.modal {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background: white;
+	height: 40%;
+	flex-direction: column;
+}
+
+.hi {
+	margin: 0 auto;
+	width: 50px;
+	height: 72px;
+	background-image: url("http://s.cdpn.io/79/sprite-steps.png");
+	-webkit-animation: play 0.8s steps(10) infinite;
+	-moz-animation: play 0.8s steps(10) infinite;
+	-ms-animation: play 0.8s steps(10) infinite;
+	-o-animation: play 0.8s steps(10) infinite;
+	animation: play 0.8s steps(10) infinite;
+}
+
+@-webkit-keyframes play {
+	from {
+		background-position: 0px;
+	}
+	to {
+		background-position: -500px;
+	}
+}
+
+@-moz-keyframes play {
+	from {
+		background-position: 0px;
+	}
+	to {
+		background-position: -500px;
+	}
+}
+
+@-ms-keyframes play {
+	from {
+		background-position: 0px;
+	}
+	to {
+		background-position: -500px;
+	}
+}
+
+@-o-keyframes play {
+	from {
+		background-position: 0px;
+	}
+	to {
+		background-position: -500px;
+	}
+}
+
+@keyframes play {
+	from {
+		background-position: 0px;
+	}
+	to {
+		background-position: -500px;
+	}
+}
+
+@keyframes blink1 {
+	0% {
+		color: #30a8df;
+	}
+	100% {
+		color: #81d2f7;
+	}
+}
+@-webkit-keyframes blink1 {
+	0% {
+		color: #30a8df;
+	}
+	100% {
+		color: #81d2f7;
+	}
+}
+
+@keyframes blink2 {
+	0% {
+		color: #e9501a;
+	}
+	100% {
+		color: #f59b7b;
+	}
+}
+@-webkit-keyframes blink2 {
+	0% {
+		color: #e9501a;
+	}
+	100% {
+		color: #f59b7b;
+	}
+}
