@@ -169,14 +169,14 @@
     column.on('click', beginGame);
 
     function beginGame(e) {
-        var currentSlot = $(e.currentTarget); // targets curret element by click event
-        var slotsInCol = currentSlot.find('.slot'); // finds list of items with class slot
+        var currentSlot = $(e.currentTarget); 
+        var slotsInCol = currentSlot.find('.slot'); 
 
         var foundAndEmptySlot = false;
-        for (var i = 5; i >= 0; i--) { // this for loop find's lowest slot
+        for (var i = 5; i >= 0; i--) { 
             if (!slotsInCol.eq(i).hasClass('player1') && !slotsInCol.eq(i).hasClass('player2')) {
                 foundAndEmptySlot = true;
-                break; // i becomes the lowest index in the slot
+                break; 
             }
         }
 
@@ -186,13 +186,13 @@
 
         slotsInCol.eq(i).addClass(currentPlayer);
 
-        if (slotsInCol.eq(i).hasClass(currentPlayer)) { // invokes click sound on every click event
+        if (slotsInCol.eq(i).hasClass(currentPlayer)) { 
             audio.play();
         }
 
-        if (checkForVictory(slotsInCol)) { // calling function checkVictory with argument slots in column
+        if (checkForVictory(slotsInCol)) { 
             var str = '';
-            if (slotsInCol.eq(i).hasClass('player1')) { // check if selected slots has a certain class
+            if (slotsInCol.eq(i).hasClass('player1')) { 
                 str = '<p class="text_color__blue">' + 'Player 1 COl Won' + '</p>';
             } else {
                 str = '<p class="text_color__red">' + 'Player 2 COl Won' + '</p>';
@@ -241,7 +241,6 @@
         return false;
     }
 
-    //// checks vistory
     function checkForVictory(slots) {
         var counter = 0;
 
@@ -250,7 +249,7 @@
                 counter++;
                 if (counter == 4) {
                     $('.column').off();
-                    return true; // reached 4 , won
+                    return true; 
                 }
             } else {
                 counter = 0;
@@ -258,7 +257,7 @@
         }
     }
 
-    function switchPlayers() { // changing players 
+    function switchPlayers() { 
         if (currentPlayer == 'player1') {
             currentPlayer = 'player2';
             circle.css({

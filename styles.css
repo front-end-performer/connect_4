@@ -85,7 +85,6 @@ p {
 	display: flex;
 	flex-direction: column;
 	transition: transform 1s;
-	/* box-shadow: 0px 3px 25px #8B9999; */
 }
 
 .scaleBoard {
